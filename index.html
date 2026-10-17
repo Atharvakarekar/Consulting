@@ -241,8 +241,12 @@ h2{
 
 .foot{
   width:min(1120px,100%);margin:18px auto 0;text-align:center;
-  color:var(--white);font-weight:600;font-size:.9rem;opacity:.9;
+  color:var(--white);font-weight:600;font-size:.9rem;
+  display:grid;gap:6px;
 }
+.foot p{margin:0;opacity:.9}
+.credit{font-family:var(--f-display);font-size:1rem;letter-spacing:.02em;opacity:1!important}
+.credit strong{font-weight:400;color:var(--sticky);text-shadow:2px 2px 0 var(--ink)}
 
 /* ---------- small screens ---------- */
 @media (max-width:880px){
@@ -353,7 +357,10 @@ img{max-width:100%}
     </section>
   </main>
 
-  <p class="foot">Scores reset at midnight · Highest score at the end of the day wins</p>
+  <footer class="foot">
+    <p class="credit">Built by <strong>Atharva Karekar</strong></p>
+    <p>Scores reset at midnight · Highest score at the end of the day wins</p>
+  </footer>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/canvas-confetti/1.9.3/confetti.browser.min.js"></script>
