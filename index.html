@@ -82,12 +82,13 @@ h1{
   font-family:var(--f-display);font-weight:400;
   font-size:clamp(2rem,4.6vw,3.35rem);line-height:1.04;margin:0 0 26px;text-wrap:balance;
 }
+.nw{white-space:nowrap}
 .tag{display:inline-block;padding:0 .16em;border:3px solid var(--ink);border-radius:10px;box-shadow:4px 4px 0 var(--ink)}
 .tag.good{background:var(--mint);transform:rotate(2deg)}
 .tag.bad{background:var(--tomato);color:var(--white);transform:rotate(-2deg)}
 
 /* legend */
-.legend{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:28px}
+.legend{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .legend-h{margin:0 0 10px;font-family:var(--f-display);font-size:1rem}
 .legend-h.good{color:#0B8A5D}
 .legend-h.bad{color:#D52A1E}
@@ -107,7 +108,7 @@ h1{
 @keyframes bob{50%{transform:translateY(-4px)}}
 
 /* form */
-form{display:grid;gap:10px}
+form{display:grid;gap:10px;margin-bottom:30px}
 label{font-weight:800;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .row{display:flex;gap:12px;flex-wrap:wrap}
 #name{
@@ -289,11 +290,7 @@ img{max-width:100%}
     <section class="screen split" id="s-start">
       <div>
         <p class="kicker">A 30-second consulting survival game</p>
-        <h1>Catch the <span class="tag good">chai</span>. <span class="tag bad">Dodge</span> the quick calls.</h1>
-        <div class="legend">
-          <div><p class="legend-h good">Catch these</p><div class="chips" id="goodChips"></div></div>
-          <div><p class="legend-h bad">Dodge these</p><div class="chips" id="badChips"></div></div>
-        </div>
+        <h1>Catch the <span class="nw"><span class="tag good">chai</span>.</span> <span class="tag bad">Dodge</span> the quick calls.</h1>
         <form id="startForm" novalidate>
           <label for="name">Your name</label>
           <div class="row">
@@ -303,6 +300,10 @@ img{max-width:100%}
           <p class="err" id="err" hidden>Type your name first.</p>
           <p class="controls">Move with your mouse, finger or the ← → keys. Catch three bad things and you burn out.</p>
         </form>
+        <div class="legend">
+          <div><p class="legend-h good">Catch these</p><div class="chips" id="goodChips"></div></div>
+          <div><p class="legend-h bad">Dodge these</p><div class="chips" id="badChips"></div></div>
+        </div>
       </div>
       <aside class="board" aria-label="Today's leaderboard">
         <p class="board-h">Today’s leaderboard</p>
